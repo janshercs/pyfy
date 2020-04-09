@@ -1,0 +1,11 @@
+{% extends 'FX/base.html' %}
+
+
+{% block content %}
+  <p>Logged out!</p>  
+  <a href="{% url 'login' %}">Click here to login again.</a>
+{% endblock %}
+  
+  {# Assumes you setup the password_reset view in your URLconf #}
+  <!-- <p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
+  

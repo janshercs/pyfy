@@ -1,0 +1,44 @@
+{% extends 'FX/base.html' %}
+
+{% block content %}
+{% load static %}
+<body>
+	<div class = "container-fluid">
+		<div class = "row">
+			
+			
+			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
+				<a href="{% url 'FX:index' %}">
+					<img src="{% static "homepage/cookie.jpeg" class = "rounded"%}">
+					<p>Foreign Exchange</p>
+				</a>
+			</div>
+
+			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
+				<a href="{% url 'macro:macro-index' %}">
+					<img src = "{% static "homepage/cookie.jpeg" %}" class = "rounded">
+					<p class = "text-center">Macroeconomic situation</p>
+				</a>
+			</div>
+
+		</div>
+
+		<div class = "row">
+			
+			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
+				<img src="{% static "homepage/cookie.jpeg" %}">
+				<p>Asset price comparison</p>
+			</div>
+
+			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
+				<img src="{% static "homepage/cookie.jpeg" %}">
+				<p>Portfolio</p>
+			</div>
+
+		</div>
+
+		
+	</div>
+</body>
+
+{% endblock %}

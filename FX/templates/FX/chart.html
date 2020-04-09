@@ -1,0 +1,15 @@
+{% extends 'FX/base.html' %}
+
+{% block title %} Chart of FX {% endblock %}
+
+
+	<!-- Charts.js -->
+{% block head %}
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
+{% block content %}
+{% autoescape off %}
+{{ plot_div }}
+{% endautoescape %}
+{% endblock%}

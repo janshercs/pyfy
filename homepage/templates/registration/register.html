@@ -1,0 +1,34 @@
+{% extends 'FX/base.html' %}
+
+{% block content %}
+<body>
+    <br>
+    <div class = "container">
+        <form method="POST">
+            {% csrf_token %}
+
+            {% for hidden_field in form.hidden_fields %}
+            {{ hidden_field }}
+            {% endfor %}
+
+            {% for field in form.visible_fields %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                  <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% if field.errors %}
+                  <small class="form-text">{{ field.errors}}</small>
+                {% endif %}
+            </div>
+            {% endfor %}
+            
+            <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Register</button>
+
+        </form>
+        
+    </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'FX/base.html' %}
+
+{% block title %} Macroeconomic situation {% endblock %}
+
+{% block head %}
+ <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<body>
+	<div>
+        <p>Charts and comments here</p>
+        {% autoescape off %}
+        {{ plot_div }}
+        {% endautoescape %}
+    </div> 
+
+</body>
+
+{% endblock %}

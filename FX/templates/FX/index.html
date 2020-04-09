@@ -1,0 +1,17 @@
+{% extends 'FX/base.html' %}
+
+{% block content %}
+<body>
+	<!-- <iframe src="http://127.0.0.1:8050/" frameborder = "0" style = "width:100vw; height:700px"></iframe> -->
+	
+	<form action="chart/" method = "GET">
+		{% csrf_token %} 
+		{{ form }}
+		<br><br>
+		<input type="submit" value="Submit">
+		<br>
+	</form>
+
+</body>
+
+{% endblock %}
