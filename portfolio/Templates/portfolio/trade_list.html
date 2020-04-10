@@ -1,0 +1,11 @@
+{% extends 'FX/base.html' %}
+
+
+{% block content %}
+<ul>
+    {%for trade in trade_list %}
+        <li>{{ trade.ticker }} - {{ trade.user}} - {{trade.volume}} </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+  
