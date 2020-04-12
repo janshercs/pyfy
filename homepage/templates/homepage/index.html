@@ -31,8 +31,10 @@
 			</div>
 
 			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
-				<img src="{% static "homepage/cookie.jpeg" %}">
-				<p>Portfolio</p>
+				<a href = "{% url 'portfolio:portfolio' %}">
+					<img src="{% static "homepage/cookie.jpeg" %}">
+					<p>Portfolio</p>
+				</a>
 			</div>
 
 		</div>

@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.core import validators
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from portfolio.models import Trade
 
 class currency_pair_form(forms.Form):
     currency_choices = [('USD','USD'),('SGD','SGD'),('JPY','JPY'),('HKD','HKD')]
@@ -15,3 +16,8 @@ class registration_form(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
+
+class add_trade(forms.ModelForm):
+    class Meta:
+        model = Trade
+        fields = ['ticker', 'buy_price', 'volume']

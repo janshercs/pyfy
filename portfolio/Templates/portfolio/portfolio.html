@@ -1,0 +1,33 @@
+{% extends 'FX/base.html' %}
+
+
+{% block content %}
+<table class="table table-hover">
+    <tr>
+        <th>Ticker</th>
+        <th>Price</th>
+        <th>Volume</th>
+        <th>Owner</th>
+        <th>Edit/Delete</th>
+    </tr>
+
+    {%for trade in trade_list %}
+        <tr>
+            <td>{{ trade.ticker }}</td>
+            <td>{{ trade.buy_price }}</td>
+            <td> {{trade.volume}} </td>
+            <td> {{trade.user}} </td>
+            <td><a href="{% url 'portfolio:delete_trade' trade.id%}">Delete</a></td>
+        </tr>
+
+    {% endfor %}
+</table>
+<form method = "POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Add Trade</button>
+</form>
+
+
+{% endblock %}
+  

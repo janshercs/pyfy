@@ -27,4 +27,10 @@ class register(TemplateView):
         else: 
             form = registration_form(request.POST)
             return render(request, 'registration/register.html', {'form':form})
+
+def logout_view(request):
+    logout(request)
+    return render(request,'registration/logout.html')
+
+    
         

@@ -18,8 +18,11 @@
     <nav class = "navbar nav-blue">
     	<a class = "nav-brand" href = "{% url 'homepage' %}"> PyFin </a>
     	<div class = "right-buttons">
+        {% if user.is_authenticated %}
+          <span class = "nav-button"> Hi, {{ user.username }} </span>
+        {% endif %}
         	<a class = "nav-button" href = "{% url 'register' %}"> Register </a>
-        	<a class = "nav-button" href = "#"> Second link </a>
+        	<a class = "nav-button" href = "/logout/"> Logout </a>
         	<a class = "nav-button" href = "#"> Third link </a>
         </div>
     	
