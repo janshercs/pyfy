@@ -2,8 +2,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from django.template import loader
 from django.views.generic import TemplateView, ListView
-from django.views.generic.edit import DeleteView
-from .models import Trade
+from django.views.generic.edit import DeleteView, UpdateView
+from django.forms import inlineformset_factory
+from .models import Trade, Ticker
 from forms import add_trade
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -12,6 +13,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 class portfolio_view(LoginRequiredMixin,ListView):
     template_name = 'portfolio/portfolio.html'
+    
     def get_queryset(self):
         #changing query set
         if self.request.user.is_authenticated:
@@ -37,3 +39,9 @@ class TradeDelete(DeleteView):
     template_name = 'portfolio/delete.html'
     model = Trade
     success_url = reverse_lazy('portfolio:portfolio')
+
+class TradeUpdate(UpdateView):
+     template_name = 'portfolio/update.html'
+     model = Trade
+     fields = ['ticker','buy_price', 'volume','date']
+     success_url = reverse_lazy('portfolio:portfolio')

@@ -4,20 +4,28 @@
 {% block content %}
 <table class="table table-hover">
     <tr>
+        <th>Date</th>
         <th>Ticker</th>
         <th>Price</th>
         <th>Volume</th>
         <th>Owner</th>
+        <th>Cost</th>
         <th>Edit/Delete</th>
     </tr>
 
     {%for trade in trade_list %}
         <tr>
-            <td>{{ trade.ticker }}</td>
-            <td>{{ trade.buy_price }}</td>
+            <td> {{trade.date}}</td>
+            <td> {{trade.ticker}}</td>
+            <td> {{trade.buy_price}}</td>
             <td> {{trade.volume}} </td>
             <td> {{trade.user}} </td>
-            <td><a href="{% url 'portfolio:delete_trade' trade.id%}">Delete</a></td>
+            <td> {{trade.cost}}</td>
+
+            <td>
+                <a href="{% url 'portfolio:update_trade' trade.id%}">Update </a>/
+                <a href="{% url 'portfolio:delete_trade' trade.id%}">Delete </a>
+            </td>
         </tr>
 
     {% endfor %}

@@ -14,6 +14,11 @@ class Trade(models.Model):
     volume = models.PositiveIntegerField()
     ticker = models.ForeignKey('Ticker', on_delete = models.CASCADE)
     user = models.ForeignKey(User, on_delete = models.CASCADE,)
+    date = models.DateField()
 
     def __str__(self):
         return "Trade number: {}".format(self.id)
+
+    @property
+    def cost(self):
+        return self.buy_price*self.volume
