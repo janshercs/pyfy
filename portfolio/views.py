@@ -8,6 +8,7 @@ from .models import Trade, Ticker
 from forms import add_trade
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Avg, Count, Min, Sum
 
 
 # Create your views here.
@@ -18,13 +19,16 @@ class portfolio_view(LoginRequiredMixin,ListView):
         #changing query set
         if self.request.user.is_authenticated:
             user = self.request.user
-            return Trade.objects.filter(user = user)
+            trades = Trade.objects.filter(user = user)
+            
+            return trades
         else: return Trade.objects.all()
         
     def get_context_data(self, **kwargs):
         #adding form into context passed into view
         context = super().get_context_data(**kwargs)
         context['form'] = add_trade()
+        context['total'] = sum(lt.cost for lt in context['trade_list'])
         return context
 
     def post(self, request):

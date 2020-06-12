@@ -40,7 +40,9 @@ class chart(TemplateView):
         query = request.GET
         resp = get_chart(query['pair_choice'],query['base_choice'])
         context = {
-            'plot_div': resp
+            'plot_div': resp['plt_div'],
+            'spot_price':resp['spot_price'],
+            'sma_price': resp['sma_price']
         }
         return render(request, 'FX/chart.html', context = context)
 

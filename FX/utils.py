@@ -6,6 +6,7 @@ from datetime import timedelta
 import json
 from plotly.offline import plot
 import plotly.graph_objects as go
+import plotly.express as px
 
 
 def get_data(currencies, base = 'SGD'):
@@ -79,12 +80,24 @@ def get_chart(currencies, base = 'SGD'):
     df = df.transpose()
     df.index = pd.to_datetime(df.index)
     df.sort_index(inplace = True)
-    fig = go.Figure()
-    scatter = go.Scatter(x = df.index , y = df.iloc[:,0], name = curs[0])
-    fig.add_trace(scatter)
-    plt_div = plot(fig, output_type = 'div', include_plotlyjs= False)
+    df['SMA30'] = df.iloc[:,0].rolling(30,min_periods = 0).mean()
 
-    return plt_div
+    fig = go.Figure()
+    scatter = go.Scatter(x = df.index , y = df.iloc[:,0], name = curs)
+    scatter30 = go.Scatter(x = df.index , y = df.loc[:,'SMA30'], name = 'SMA30')
+    fig.add_trace(scatter)
+    fig.add_trace(scatter30)
+    
+    plt_div = plot(fig, output_type = 'div', include_plotlyjs= False)
+    spot_price = df.iloc[-1,0]
+    sma_price = df.iloc[-1,1]
+    fx_data = {
+        'plt_div':plt_div,
+        'spot_price':spot_price,
+        'sma_price': sma_price
+    }
+
+    return fx_data
 
 
 #print(get_data('HKD')) #returns spot price successfully; API call successful.

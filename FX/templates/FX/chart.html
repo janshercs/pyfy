@@ -11,5 +11,8 @@
 {% block content %}
 {% autoescape off %}
 {{ plot_div }}
+<div>Spot price is: {{spot_price}}<br>
+	30d Moving avg is: {{sma_price}}
+</div>
 {% endautoescape %}
 {% endblock%}

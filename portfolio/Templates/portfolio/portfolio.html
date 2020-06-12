@@ -8,7 +8,6 @@
         <th>Ticker</th>
         <th>Price</th>
         <th>Volume</th>
-        <th>Owner</th>
         <th>Cost</th>
         <th>Edit/Delete</th>
     </tr>
@@ -19,7 +18,6 @@
             <td> {{trade.ticker}}</td>
             <td> {{trade.buy_price}}</td>
             <td> {{trade.volume}} </td>
-            <td> {{trade.user}} </td>
             <td> {{trade.cost}}</td>
 
             <td>
@@ -27,8 +25,15 @@
                 <a href="{% url 'portfolio:delete_trade' trade.id%}">Delete </a>
             </td>
         </tr>
-
     {% endfor %}
+    <tr>
+        <td>Total</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{total}}</td>
+        <td></td>
+    </tr>
 </table>
 <form method = "POST">
     {% csrf_token %}
