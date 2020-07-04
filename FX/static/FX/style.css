@@ -30,17 +30,28 @@ a:link {
 .right-buttons{
 	float:right;
 }
+.footer-content{
+	color: green;
+	font-size:150%;
+	font-family: 'Roboto Slab', serif;
+	
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
 
 .footer{
 	background-color: #4169E1;
 	width: 100%;
 	padding:2%;
-	position: absolute;
 	bottom:0;
-}
-
-.footer-content{
-	color: #e3e30e;
-	font-size:150%;
-	font-family: 'Roboto Slab', serif;
+	height: 2.5rem
 }
