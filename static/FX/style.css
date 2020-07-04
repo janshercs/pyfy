@@ -1,5 +1,5 @@
 .nav-blue{
-	background-color: #4169E1;	
+	background-color: #4169E1;
 }
 
 .nav-brand{
@@ -34,17 +34,16 @@ a:link {
 .footer{
 	background-color: #4169E1;
 	width: 100%;
-	padding:2%;
 	bottom:0;
+	padding: 2%;
 	height: 2.5rem;
-	flex: 1;
 }
 
 .footer-content{
-	color: green;
+	color: red;
 	font-size:150%;
 	font-family: 'Roboto Slab', serif;
-	
+
 }
 
 .page-container {
