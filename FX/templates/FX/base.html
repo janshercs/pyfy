@@ -26,23 +26,18 @@
           <a class = "nav-button" href = "{% url 'register' %}"> Register </a>  
           <a class = "nav-button" href = "/accounts/login"> Log in </a>
         {% endif %}
-        </div>
-    	
+      </div>
     </nav>	
     <br><br>
     <div class = "page-container">
+      
       <div class = "page-content container">
         {% block content %}
 
 
-
         {% endblock %}
       </div>
-    
-      <br>
-        <div class = "footer">
-          <p class="footer-content">&copy 2020 Her Chyuan Sheng, Jansen.</p>
-        </div>
+      <div class = 'footer'><p class="footer-content">&copy 2020 Her Chyuan Sheng, Jansen.</p></div>
     </div>
 
     <!-- Optional JavaScript -->

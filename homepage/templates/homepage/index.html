@@ -7,17 +7,18 @@
 		<div class = "row">
 			
 			
-			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
+			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 homeimg text-center">
 				<a href="{% url 'FX:index' %}">
-					<img src="{% static "homepage/fx.png" class = "rounded"%}">
-					<p>Foreign Exchange</p>
+					<img class = "homepage-img" src="{% static "homepage/fx.png" class = "rounded"%}">
+					<div class = 'overlay'>Foreign Exchange rates</div>	
 				</a>
+				
 			</div>
 
-			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
+			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 homeimg text-center">
 				<a href="{% url 'macro:macro-index' %}">
-					<img src = "{% static "homepage/cookie.jpeg" %}" class = "rounded">
-					<p class = "text-center">Macroeconomic blog</p>
+					<img class = "homepage-img" src = "{% static "homepage/cookie.jpeg" %}" class = "rounded">
+					<div class = 'overlay'>Macroeconomic Blog</div>
 				</a>
 			</div>
 
@@ -25,15 +26,17 @@
 
 		<div class = "row">
 			
-			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
-				<img src="{% static "homepage/cookie.jpeg" %}">
-				<p>Asset price comparison</p>
+			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 homeimg text-center">
+				<a href="{% url 'macro:macro-index' %}">
+					<img class = "homepage-img" src="{% static "homepage/cookie.jpeg" %}">
+					<div class = 'overlay'>Asset price comparison</div>
+				</a>
 			</div>
 
-			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 text-center">
+			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 homeimg text-center">
 				<a href = "{% url 'portfolio:portfolio' %}">
-					<img src="{% static "homepage/portfolio.png" %}">
-					<p>Portfolio</p>
+					<img class = "homepage-img" src="{% static "homepage/portfolio.png" %}">
+					<div class = 'overlay'>Portfolio</div>
 				</a>
 			</div>
 
