@@ -72,7 +72,7 @@ a:link {
 	color: #e3e30e;
 	font-size:150%;
 	font-family: 'Roboto Slab', serif;
-	vertical-align: middle;
+	line-height: 300px;
   }
   
   .homeimg :hover .overlay {
