@@ -1,0 +1,15 @@
+{% extends 'FX/base.html' %}
+
+{% block title %} Create a Post{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<form method = "POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Post!</button>
+</form>
+
+{% endblock %}

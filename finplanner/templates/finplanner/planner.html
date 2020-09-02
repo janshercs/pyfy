@@ -1,0 +1,20 @@
+{% extends 'FX/base.html' %}
+
+{% block title %} Personal Financial Planning {% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+<body>
+<form name = "user_data">
+    {% csrf_token %} 
+    {{ form }}
+</form>
+</body>
+
+{% load static %}
+<script src="{% static 'finplanner/planner.js' %}"></script>
+
+{% endblock %}
