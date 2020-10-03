@@ -4,6 +4,7 @@ from django.core import validators
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from portfolio.models import Trade, Ticker
+from macro.models import Blogpost
 
 class currency_pair_form(forms.Form):
     currency_choices = [('USD','USD'),('SGD','SGD'),('JPY','JPY'),('HKD','HKD')]
@@ -49,7 +50,15 @@ class add_trade(forms.ModelForm):
             else:
                 ticker, created = Ticker.objects.get_or_create(ticker = new_ticker,name = new_ticker_name)
                 self.cleaned_data['ticker'] = ticker
-        
+
+class finplanner(forms.Form):
+    c_age = forms.IntegerField(label = 'Current age')
+    r_age = forms.IntegerField(label = 'Target retirement age')
+    salary = forms.IntegerField(label = 'Current monthly salary')
+    expense = forms.IntegerField(label = 'Current monthly expenses')
+    time_remaining = forms.IntegerField(label = 'Time horizon left')
+    savings = forms.IntegerField(label = 'Current monthly savings')
+
 
 
 
@@ -59,4 +68,3 @@ class add_trade(forms.ModelForm):
 #     class Meta:
 #         model = Ticker
 #         fields = ['ticker', 'name']
-

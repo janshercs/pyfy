@@ -20,8 +20,9 @@ urlpatterns = [
     path('', include('homepage.urls')),
     path('FX/', include('FX.urls', namespace="FX")),
     path('admin/', admin.site.urls),
-    path('macro/', include('macro.urls', namespace="macro")),
+    path('macro/', include('macro.urls',namespace = "macro")),
     path('accounts/', include('django.contrib.auth.urls')),
     path('portfolio/', include('portfolio.urls', namespace = "portfolio")),
+    path('finplanner/', include('finplanner.urls', namespace = "finplanner")),
     
 ]

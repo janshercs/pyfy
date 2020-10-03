@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'homepage',
     'macro',
     'portfolio',
+    'finplanner',
 ]
 
 MIDDLEWARE = [
