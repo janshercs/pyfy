@@ -1,5 +1,5 @@
 .nav-blue{
-	background-color: #4169E1;	
+	background-color: rgba(24, 82, 182, 0.87);
 }
 
 .nav-brand{
@@ -32,7 +32,7 @@ a:link {
 }
 
 .footer{
-	background-color: #4169E1;
+	background-color: rgba(24, 82, 182, 0.87);
 	width: 100%;
 	padding:2%;
 }
@@ -64,6 +64,7 @@ a:link {
 	bottom: 100%;
 	left: 0;
 	right: 0;
+<<<<<<< HEAD
 	background-color: #4169E1;;
 	overflow: hidden;
 	width: 100%;
@@ -73,9 +74,30 @@ a:link {
 	font-size:150%;
 	font-family: 'Roboto Slab', serif;
 	line-height: 300px;
+=======
+	overflow: hidden;
+	width: 100%;
+	height: 0;
+
+	color: rgba(24, 82, 182, 0.87);
+	font-size:150%;
+	font-family: 'Roboto Slab', serif;
+	/* line-height: 300px; */
+>>>>>>> 4baca380f8f8367cd1cfad24e13f347c33260386
   }
   
   .homeimg :hover .overlay {
 	bottom: 0;
 	height: 100%;
   }
+
+  .homeimg :hover .home-icon{
+	  color: rgba(24, 82, 182, 0.87);
+	  transition: .5s ease;
+  }
+
+ .home-icon{
+	font-size: 144px; 
+	color: rgba(72, 74, 77, 0.253);
+ } 
+ 

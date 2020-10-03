@@ -58,6 +58,19 @@ class finplanner(forms.Form):
     expense = forms.IntegerField(label = 'Current monthly expenses')
     time_remaining = forms.IntegerField(label = 'Time horizon left')
     savings = forms.IntegerField(label = 'Current monthly savings')
+<<<<<<< HEAD
+=======
+    interest = forms.IntegerField(label = 'Risk Free Interest rates')
+    inflation = forms.IntegerField(label = 'Inflation rate (%)', 
+    #help_text='Average long term inflation rate is about 2%, though it has been about <1% recently'
+    )
+    returns = forms.IntegerField(label = 'Annual Returns (%)')
+    r_expense = forms.FloatField(label = 'Retirement expense')
+    final_savings = forms.IntegerField(label = 'Accumulated wealth before retiring')
+    final_years = forms.IntegerField(label = 'Years left after retirement with expected life span of 80')
+    
+
+>>>>>>> 4baca380f8f8367cd1cfad24e13f347c33260386
 
 
 
