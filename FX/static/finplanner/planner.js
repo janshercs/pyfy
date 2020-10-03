@@ -14,6 +14,9 @@ function calc_timeRemaining(form){
 function calc_savings(form){
     var salary = form.elements['id_salary'].value;
     var expense = form.elements['id_expense'].value;
+<<<<<<< HEAD
+    return salary-expense
+=======
     return salary-expense;
 }
 
@@ -29,20 +32,31 @@ function calc_r_expense(form){
     var exp_inflation = inflation ** years;
     var result = expense*exp_inflation*0.7;
     return Math.round(result);
+>>>>>>> 4baca380f8f8367cd1cfad24e13f347c33260386
 }
 
 function display(){
     var theForm = document.forms["user_data"];
     var timeRemaining = calc_timeRemaining(theForm);
     var savings = calc_savings(theForm);
+<<<<<<< HEAD
+=======
     var final_years = calc_final_years(theForm);
     var r_expense = calc_r_expense(theForm);
+>>>>>>> 4baca380f8f8367cd1cfad24e13f347c33260386
     if (Number.isInteger(timeRemaining)){
        theForm.elements['time_remaining'].value = timeRemaining;
     }
     if (Number.isInteger(savings)){
         theForm.elements['id_savings'].value = savings;
     }
+<<<<<<< HEAD
+    
+}
+
+document.getElementById('id_r_age').addEventListener("change", display);
+document.getElementById('id_expense').addEventListener("change", display);
+=======
     if (Number.isInteger(final_years)){
         theForm.elements['id_final_years'].value = final_years;
     }
@@ -54,3 +68,4 @@ function display(){
 document.getElementById('id_r_age').addEventListener("change", display);
 document.getElementById('id_expense').addEventListener("change", display);
 document.getElementById('id_inflation').addEventListener("change", display);
+>>>>>>> 4baca380f8f8367cd1cfad24e13f347c33260386
