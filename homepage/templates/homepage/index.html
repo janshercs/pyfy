@@ -9,7 +9,10 @@
 			
 			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 homeimg text-center">
 				<a href="{% url 'FX:index' %}">
-					<img class = "homepage-img" src="{% static "homepage/fx.png" class = "rounded"%}">
+					<!-- <img class = "homepage-img" src="{% static "homepage/fx.png" class = "rounded"%}"> -->
+					<span class = "home-icon" >
+						<i class="fas fa-chart-line"></i>
+					</span>
 					<div class = 'overlay'>Foreign Exchange rates</div>	
 				</a>
 				
@@ -18,7 +21,10 @@
 
 			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 homeimg text-center">
 				<a href="{% url 'macro:blog' %}">
-					<img class = "homepage-img" src = "{% static "homepage/cookie.jpeg" %}" class = "rounded">
+					<!-- <img class = "homepage-img" src = "{% static "homepage/cookie.jpeg" %}" class = "rounded"> -->
+					<span class = "home-icon" >
+					<i class="fas fa-quote-left"></i>
+					</span>
 					<div class = 'overlay'>Macroeconomic Blog</div>
 				</a>
 			</div>
@@ -30,14 +36,20 @@
 			
 			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 homeimg text-center">
 				<a href="{% url 'finplanner:planner' %}">
-				<img class = "homepage-img" src="{% static "homepage/cookie.jpeg" %}">
+				<!-- <img class = "homepage-img" src="{% static "homepage/cookie.jpeg" %}"> -->
+				<span class = "home-icon" >
+					<i class="fas fa-tachometer-alt"></i>
+				</span>
 					<div class = 'overlay'>Personal Finance Planning</div>
 				</a>
 			</div>
 
 			<div class = "col-lg-6 col-md-6 col-s-12 col-xs-12 homeimg text-center">
 				<a href = "{% url 'portfolio:portfolio' %}">
-					<img class = "homepage-img" src="{% static "homepage/portfolio.png" %}">
+					<!-- <img class = "homepage-img" src="{% static "homepage/portfolio.png" %}"> -->
+					<span class = "home-icon" >
+						<i class="fas fa-chart-pie"></i>
+					</span>
 					<div class = 'overlay'>Portfolio</div>
 				</a>
 			</div>
